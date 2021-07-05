@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_sun"
+    android:fitsSystemWindows="true">
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="88dp"
+        android:checkedButton="@id/today_btn"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_sm">
+
+        <RadioButton
+            android:id="@+id/today_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/transparent"
+            android:elevation="4dp"
+            android:fontFamily="@font/averta_bold"
+            android:paddingLeft="16dp"
+            android:paddingTop="4dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="4dp"
+            android:state_checked="true"
+            android:text="@string/today_btn"
+            android:textColor="@drawable/text_color" />
+
+        <RadioButton
+            android:id="@+id/tomorrow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:background="@drawable/radio_selector"
+            android:button="@android:color/darker_gray"
+            android:elevation="4dp"
+            android:fontFamily="@font/averta_bold"
+            android:paddingLeft="16dp"
+            android:paddingTop="4dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="4dp"
+            android:text="@string/tomorrow_btn"
+            android:textColor="@drawable/text_color"
+            tools:layout_editor_absoluteX="16dp" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/weatherImg"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="150dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_sm"
+        app:srcCompat="@drawable/ic_image_sunny" />
+
+    <TextView
+        android:id="@+id/weather_label"
+        android:layout_width="0dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="127dp"
+        android:fontFamily="@font/averta_regular"
+        android:textAlignment="center"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherImg"
+        app:layout_constraintVertical_bias="0.003"
+        tools:text="weather label" />
+
+    <TextView
+        android:id="@+id/current_temp_id"
+        android:layout_width="80dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="14dp"
+        android:height="62dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="bottom|center_horizontal"
+        android:includeFontPadding="false"
+        android:text="20"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/textLightColor"
+        android:textSize="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather_label" />
+
+    <TextView
+        android:id="@+id/celsius_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="bottom|center_horizontal"
+        android:text="°C"
+        android:textColor="@color/textLightColor"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/current_temp_id"
+        app:layout_constraintTop_toTopOf="@+id/current_temp_id" />
+
+    <TextView
+        android:id="@+id/max_temp_id"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="@string/default_value"
+        android:textAlignment="center"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintEnd_toStartOf="@+id/min_temp_id"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_temp_id" />
+
+    <TextView
+        android:id="@+id/min_temp_id"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="2dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="@string/default_value"
+        android:textAlignment="center"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/max_temp_id"
+        app:layout_constraintTop_toTopOf="@+id/max_temp_id" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_marginEnd="2dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/min_temp_id"
+        app:layout_constraintEnd_toStartOf="@+id/min_temp_id"
+        app:layout_constraintTop_toTopOf="@+id/min_temp_id"
+        app:srcCompat="@drawable/ic_arrowdown" />
+
+    <ImageView
+        android:id="@+id/arrowUp_id"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_marginEnd="2dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/max_temp_id"
+        app:layout_constraintEnd_toStartOf="@+id/max_temp_id"
+        app:layout_constraintTop_toTopOf="@+id/max_temp_id"
+        app:srcCompat="@drawable/ic_arrow" />
+
+    <TextView
+        android:id="@+id/humidity_id"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="@string/default_value"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/wind_speed_id"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="@string/default_value"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/humidity_id" />
+
+    <TextView
+        android:id="@+id/precipitation_id"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:fontFamily="@font/averta_bold"
+        android:gravity="center"
+        android:text="@string/default_value"
+        android:textColor="@color/textLightColor"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/humidity_id" />
+
+    <ImageView
+        android:id="@+id/logo_sm"
+        android:layout_width="78dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="65dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_precipitation_24px" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginBottom="102dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_temp_id"
+        app:srcCompat="@drawable/ic_humidity_24px" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/ic_wind_24px" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
